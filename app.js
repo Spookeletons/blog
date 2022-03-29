@@ -33,7 +33,7 @@ app.use(session({
 const{passport} = require('./middleware/passport');
 app.use(passport.initialize());
 app.use(passport.authenticate('session'));
-app.use(function(res,res,next){
+app.use(function(req,res,next){
   if(req.user){
     res.locals.user = req.user;
   };
